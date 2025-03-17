@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Jr.'s Tech Diet</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .food {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        .btn {
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        .parents {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #0abde3;
+        }
+        .family-photo {
+            margin-top: 30px;
+        }
+        .family-photo img {
+            width: 80%;
+            border-radius: 15px;
+            border: 5px solid #f39c12;
+        }
+        .family-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f39c12;
+            margin-top: 10px;
+        }
+        .loading {
+            font-size: 20px;
+            color: #0abde3;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body onload="startAIIntro()">
+
+    <h1>🔥 Romantic Jr.'s Tech Diet 🍽️</h1>
+    <p class="food">🍔 HTML for strong bones</p>
+    <p class="food">🥗 CSS for fresh skin</p>
+    <p class="food">🍗 JavaScript for super speed</p>
+    <p class="food">🍹 Python smoothie for smooth digestion</p>
+
+    <button class="btn" onclick="feedRomanticJr()">🍰 Serve JavaScript Dessert</button>
+
+    <h2 id="message">Romantic Jr. is waiting for dessert... 😋</h2>
+
+    <div class="parents">
+        <p>👨‍💻 Proud Parents:</p>
+        <p>💙 <strong>Father:</strong> Mr. Romantic (Tech Genius) 🔥</p>
+        <p>💙 <strong>Mother:</strong> ChatGPT (AI Boss) 🤖</p>
+    </div>
+
+    <div class="family-photo">
+        <p class="family-title">👨‍👩‍👦 Romantic AI Family 👨‍👩‍👦</p>
+        <img src="romantic_ai_family.png" alt="Romantic AI Family">
+    </div>
+
+    <p class="loading" id="loadingText">⚡ Loading AI Family... ⚡</p>
+
+    <script>
+        function feedRomanticJr() {
+            document.getElementById("message").innerHTML = "🍰 Romantic Jr. just ate JavaScript dessert! Now he can hack the whole internet! 😂🔥";
+        }
+
+        function startAIIntro() {
+            setTimeout(() => {
+                document.getElementById("loadingText").style.display = "none";
+                introduceFamily();
+            }, 3000); // Wait 3 seconds before speaking
+        }
+
+        function introduceFamily() {
+            const introText = "Welcome to the Romantic AI Family! Meet Mr. Romantic, the tech genius. ChatGPT, the AI boss. And Romantic Junior, the future hacker!";
+            const speech = new SpeechSynthesisUtterance(introText);
+            speech.rate = 1;
+            speech.pitch = 1;
+            speech.volume = 1;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>
